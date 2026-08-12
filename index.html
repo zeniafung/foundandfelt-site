@@ -703,7 +703,9 @@
   }
   .join-form .join-status { margin-top: 14px; font-size: 13.5px; max-width: none; }
   .join-form .join-status.err { color: var(--yellow); }
-  .join-form .hp { position: absolute; left: -9999px; opacity: 0; }
+  /* display:none, not off-screen — Chrome still autofills an off-screen text
+     input, which silently tripped the honeypot on real people */
+  .join-form .hp { display: none; }
   .join-done {
     margin-top: 36px;
     max-width: 430px;
@@ -1059,7 +1061,9 @@
         </div>
         <p class="note" id="join-note">iPhone isn&rsquo;t ready yet, we&rsquo;ll email you the moment it is.</p>
 
-        <input type="text" class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <!-- checkbox, not text: autofill and password managers never tick a
+             checkbox, but bots that blind-fill every field still do -->
+        <input type="checkbox" class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <button class="btn" type="submit">Get early access</button>
         <p class="join-status" id="join-status" role="status" aria-live="polite"></p>
