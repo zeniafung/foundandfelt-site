@@ -767,6 +767,10 @@
     .hero .hero-collage .col-strip.up { margin-top: 0; padding-bottom: 0; align-self: flex-start; }
     .hero .hero-collage .col-strip:last-child { margin-top: 22px; align-self: flex-start; }
     .how { padding: 56px 0 64px; }
+    /* the hard break balances two long desktop lines; on a narrow column it
+       just strands "and let us print it for you." on its own short line.
+       (source has a space before the <br> so hiding it doesn't join words) */
+    .how .coda br { display: none; }
     .steps { grid-template-columns: 1fr; border-top: none; margin-top: 38px; }
     .step {
       border-right: none;
@@ -855,6 +859,18 @@
     .hero p.lede, .hero .lede-note { max-width: none; font-size: 20px; }
   }
 </style>
+
+<!-- Cloudflare Web Analytics — cookieless: page views, referrers, countries, Core Web Vitals -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bd88caf10fe94364940f3a45f5d1d017"}'></script>
+
+<!-- PostHog — funnel events (early_access_clicked / waitlist_submitted / waitlist_failed).
+     Every event is tagged surface:"website" so site traffic can be filtered out of the app dashboards. -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_zzodP6Av2DxXiP9VvXUrMrUmKGNN84DREGH43AndtrK4', { api_host: 'https://us.i.posthog.com' });
+  posthog.register({ surface: 'website' });
+</script>
+
 </head>
 <body>
 
@@ -925,7 +941,7 @@
         <p>A few sentences in your own words, one moment a week. Your answers are the book — your photographs, your voice, the year the way it actually felt.</p>
       </div>
     </div>
-    <p class="coda"><em>Get a free PDF for every moment you answer.</em> You can never have enough books. Print it at home, or be lazy<br />and let us print it for you.</p>
+    <p class="coda"><em>Get a free PDF for every moment you answer.</em> You can never have enough books. Print it at home, or be lazy <br />and let us print it for you.</p>
   </div>
 </section>
 

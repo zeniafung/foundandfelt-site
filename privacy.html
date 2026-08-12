@@ -131,6 +131,18 @@
     .doc h2 { margin-top: 40px; }
   }
 </style>
+
+<!-- Cloudflare Web Analytics — cookieless: page views, referrers, countries, Core Web Vitals -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bd88caf10fe94364940f3a45f5d1d017"}'></script>
+
+<!-- PostHog — funnel events (early_access_clicked / waitlist_submitted / waitlist_failed).
+     Every event is tagged surface:"website" so site traffic can be filtered out of the app dashboards. -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_zzodP6Av2DxXiP9VvXUrMrUmKGNN84DREGH43AndtrK4', { api_host: 'https://us.i.posthog.com' });
+  posthog.register({ surface: 'website' });
+</script>
+
 </head>
 <body>
 
@@ -194,7 +206,7 @@
     <h2>5. Analytics</h2>
     <p>We use <strong>PostHog</strong> to understand where people get stuck &mdash; which onboarding step loses everyone, how often a scan fails, whether answers get abandoned half-written. It&rsquo;s hosted in the United States.</p>
     <p>In the app, analytics is deliberately narrow. Automatic event capture is off and session replay is off, so nothing is collected unless we wrote a line of code to collect it. Every event carries counts, durations, enums, and opaque identifiers &mdash; never book titles (they&rsquo;re children&rsquo;s names), never answer text, never photo identifiers, never place names.</p>
-    <p>On this website, we also use PostHog to see which pages people read. The website is the one place session recording may be used; the app never records anything.</p>
+    <p>On this website we use two things. <strong>PostHog</strong> tells us which pages people read and whether the early-access form works &mdash; whether someone pressed the button, and whether the submission went through. <strong>Cloudflare Web Analytics</strong> counts visits and shows where they came from; it sets no cookies and doesn&rsquo;t follow you anywhere else, which is why this site has no cookie banner. The website is the one place session recording may be used; the app never records anything.</p>
 
     <h2>6. Who else touches your data</h2>
     <p>We keep this list short on purpose.</p>
@@ -204,6 +216,7 @@
       <li><strong>Google</strong> &mdash; turning photo coordinates into place names.</li>
       <li><strong>PostHog</strong> &mdash; product analytics, as described above.</li>
       <li><strong>Expo</strong> &mdash; building and delivering the app and its updates.</li>
+      <li><strong>Cloudflare</strong> &mdash; this website&rsquo;s DNS, its cookieless visit counts, and forwarding mail sent to our address.</li>
     </ul>
     <p>Each of these processes data on our instructions to make the app work. None of them are given your data to use for their own purposes.</p>
 
