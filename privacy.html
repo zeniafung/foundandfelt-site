@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy &mdash; Found &amp; Felt</title>
+<meta name="description" content="What Found & Felt collects, what leaves your phone, and what we never do with it." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;0,900;1,800&family=Playfair:ital,wght@0,400;0,700;1,400;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FCF9F5;
+    --dark-paper: #F1EBE4;
+    --paper-bg: #E2DBD3;
+    --ink: #2F2E1E;
+    --ink-60: rgba(47, 46, 30, 0.72);
+    --ink-20: rgba(47, 46, 30, 0.2);
+    --ink-10: rgba(47, 46, 30, 0.1);
+    --green: #4A8A79;
+    --green-text: #3D7263;
+    --light-green: #9DD392;
+    --serif-display: "Playfair Display", Georgia, serif;
+    --serif: "Playfair", Georgia, serif;
+    --sans: "Be Vietnam Pro", -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0 0.12 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1700px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 72px); position: relative; }
+
+  /* header */
+  header { padding: 28px 0 24px; border-bottom: 1px solid var(--ink-10); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .wordmark img { height: clamp(46px, 3.4vw, 60px); display: block; }
+  header a.back {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.21px;
+  }
+  header a.back:hover { color: var(--green); }
+
+  /* document */
+  .doc { padding: 72px 0 96px; }
+  .doc .wrap { max-width: 760px; }
+  .doc h1 {
+    font-family: var(--serif-display);
+    font-weight: 800;
+    font-size: clamp(32px, 4.4vw, 46px);
+    line-height: 1.12;
+  }
+  .updated { margin-top: 18px; color: var(--ink-60); font-size: 15px; }
+  .lede { margin-top: 28px; font-size: 18px; line-height: 1.6; color: var(--ink-60); }
+
+  .doc h2 {
+    font-family: var(--serif-display);
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 52px 0 14px;
+    padding-top: 26px;
+    border-top: 1px solid var(--ink-10);
+  }
+  .doc h3 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    margin: 26px 0 8px;
+  }
+  .doc p { margin-top: 14px; color: var(--ink-60); }
+  .doc ul { margin: 14px 0 0; padding-left: 20px; }
+  .doc li { padding: 4px 0; color: var(--ink-60); }
+  .doc li::marker { color: var(--green); }
+  .doc a { color: var(--green-text); text-decoration: underline; text-underline-offset: 2px; }
+  .doc strong { color: var(--ink); font-weight: 500; }
+
+  /* footer */
+  footer {
+    background: var(--ink);
+    color: rgba(252, 249, 245, 0.55);
+    padding: 0 0 44px;
+    position: relative;
+    z-index: 2;
+  }
+  footer .wrap {
+    border-top: 1px solid rgba(252, 249, 245, 0.15);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    font-size: 13px;
+  }
+  footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(252, 249, 245, 0.25);
+    padding-bottom: 1px;
+  }
+  footer a:hover { color: var(--light-green); border-bottom-color: var(--light-green); }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media (max-width: 820px) {
+    .doc { padding: 48px 0 72px; }
+    .doc h2 { margin-top: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="index.html"><img src="assets/wordmark.png" alt="Found &amp; Felt" /></a>
+    <a class="back" href="index.html">&larr; Back to the site</a>
+  </div>
+</header>
+
+<section class="doc">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated 11 August 2026</p>
+    <p class="lede">Found &amp; Felt reads your photo library to find the moments worth keeping. That only works if you trust us with the photos, so this page says exactly what we collect, what leaves your phone, and what we will never do with it. Plainly, without hiding anything in the middle of a long sentence.</p>
+
+    <h2>1. The short version</h2>
+    <ul>
+      <li>We never sell your data. Not to advertisers, not to data brokers, not to anyone.</li>
+      <li>We don&rsquo;t use your photos or your answers to train AI models.</li>
+      <li>The app never records your screen.</li>
+      <li>Some photos and face crops <strong>do</strong> leave your phone, because that&rsquo;s how the writing works. Section 3 explains precisely which ones.</li>
+      <li>You can ask us to delete everything, and we will.</li>
+    </ul>
+
+    <h2>2. What we collect</h2>
+
+    <h3>Your account</h3>
+    <p>An email address and a password when you sign up. The password is stored hashed by our authentication provider &mdash; we never see it. There are no anonymous accounts; the book has to belong to someone.</p>
+
+    <h3>Your photos</h3>
+    <p>With your permission, the app scans the photos already on your device that fall inside your book&rsquo;s date range. Finding faces and grouping them into people happens on your phone. We do not upload your whole photo library, and we do not have a copy of it.</p>
+
+    <h3>The people in your book</h3>
+    <p>The names you type for the people you tag, and which face belongs to which name. Names are only ever the ones you enter yourself.</p>
+
+    <h3>What you write</h3>
+    <p>Your answers to each moment&rsquo;s question. This is the actual point of the app, and it&rsquo;s stored so your book still exists when you reinstall.</p>
+
+    <h3>Places</h3>
+    <p>If a photo carries location data, we turn those coordinates into a place name (a city, a park, a beach) so a moment can say where it happened. We store the resulting name, and we cache the lookup so we don&rsquo;t repeat it.</p>
+
+    <h3>Diagnostics</h3>
+    <p>When a scan finishes we keep a technical record of how it went &mdash; how long it took, how many photos it looked at, how many faces it found, whether it ran out of memory. Counts, durations, and reason codes only. No titles, no names, no photo identifiers.</p>
+
+    <h2>3. What leaves your phone, and where it goes</h2>
+    <p>This is the part most privacy policies bury, so here it is directly.</p>
+    <p>To recognise who is in a photo and to write each moment, Found &amp; Felt sends <strong>cropped images of faces and the selected photos for a moment</strong> to <strong>Anthropic&rsquo;s Claude API</strong>. Along with them we send the context the writing needs: the names you gave those people, the date, and the place name. This happens through our own server, so your device never talks to Anthropic directly and our API key stays on our side.</p>
+    <p>Anthropic processes these images to return a result to us. Under our agreement with them, this data is not used to train their models. We do not send your entire photo library &mdash; only the crops and the photos belonging to moments the app is actually writing.</p>
+    <p>If you are not comfortable with photos of your family being processed by an AI provider, this app is not a good fit for you, and we&rsquo;d rather say so here than have you find out later.</p>
+
+    <h2>4. What we never do</h2>
+    <ul>
+      <li><strong>We never sell your data.</strong></li>
+      <li>We don&rsquo;t show ads, and we don&rsquo;t share your data with advertisers.</li>
+      <li>We don&rsquo;t use your photos, faces, or answers to train our own or anyone else&rsquo;s models.</li>
+      <li>We don&rsquo;t record your screen inside the app. Session replay is switched off.</li>
+      <li>We don&rsquo;t put your children&rsquo;s names, your book titles, your answers, or your places into our analytics.</li>
+    </ul>
+
+    <h2>5. Analytics</h2>
+    <p>We use <strong>PostHog</strong> to understand where people get stuck &mdash; which onboarding step loses everyone, how often a scan fails, whether answers get abandoned half-written. It&rsquo;s hosted in the United States.</p>
+    <p>In the app, analytics is deliberately narrow. Automatic event capture is off and session replay is off, so nothing is collected unless we wrote a line of code to collect it. Every event carries counts, durations, enums, and opaque identifiers &mdash; never book titles (they&rsquo;re children&rsquo;s names), never answer text, never photo identifiers, never place names.</p>
+    <p>On this website, we also use PostHog to see which pages people read. The website is the one place session recording may be used; the app never records anything.</p>
+
+    <h2>6. Who else touches your data</h2>
+    <p>We keep this list short on purpose.</p>
+    <ul>
+      <li><strong>Supabase</strong> &mdash; accounts, database, and file storage. This is where your book lives.</li>
+      <li><strong>Anthropic</strong> &mdash; the Claude API, which reads the face crops and photos described in section 3 and writes each moment.</li>
+      <li><strong>Google</strong> &mdash; turning photo coordinates into place names.</li>
+      <li><strong>PostHog</strong> &mdash; product analytics, as described above.</li>
+      <li><strong>Expo</strong> &mdash; building and delivering the app and its updates.</li>
+    </ul>
+    <p>Each of these processes data on our instructions to make the app work. None of them are given your data to use for their own purposes.</p>
+
+    <h2>7. Keeping it, and deleting it</h2>
+    <p>We keep your book for as long as your account exists, because a book you can&rsquo;t open later isn&rsquo;t worth making.</p>
+    <p>You can delete an individual answer or a moment in the app at any time. If you want your whole account and everything in it deleted, email <a href="mailto:zenia@foundandfelt.com">zenia@foundandfelt.com</a> and we&rsquo;ll do it &mdash; permanently, including your photos in our storage and your answers. Backups roll off on their own shortly afterwards.</p>
+    <p>Depending on where you live, you may also have the right to ask for a copy of what we hold, to correct it, or to object to how we use it. Same address; a person reads that inbox.</p>
+
+    <h2>8. Your phone&rsquo;s permissions</h2>
+    <p>The app asks for access to your photo library. You can say no, or grant access to only selected photos, and you can change your mind later in your phone&rsquo;s settings. If you revoke access, the app stops scanning &mdash; the book you&rsquo;ve already made stays.</p>
+
+    <h2>9. Children</h2>
+    <p>Found &amp; Felt is full of photos of children, but it&rsquo;s built for the adults who take them. Accounts are for adults only, and children shouldn&rsquo;t use the app or create an account. If you believe a child has created an account, email us and we&rsquo;ll remove it.</p>
+
+    <h2>10. Early testing</h2>
+    <p>The app is in early testing with a small group of families. That means things change quickly, and occasionally we look at technical logs to work out why a scan failed on a particular device. Those logs follow the same rule as everything else: counts and reason codes, never your content.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If we change how we handle your data in a way that matters, we&rsquo;ll tell you in the app or by email before it takes effect &mdash; not by quietly editing this page.</p>
+
+    <h2>12. Contact</h2>
+    <p>Questions, concerns, or a request to delete something: <a href="mailto:zenia@foundandfelt.com">zenia@foundandfelt.com</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Found &amp; Felt</span>
+    <span><a href="terms.html">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp; <a href="index.html">Back to the site</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
