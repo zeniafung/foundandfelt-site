@@ -871,6 +871,40 @@
   posthog.register({ surface: 'website' });
 </script>
 
+<!-- Structured data: tells Google this is a named brand + product, which is
+     what powers a knowledge panel and sitelinks for a brand-name search. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://foundandfelt.com/#org",
+      "name": "Found & Felt",
+      "alternateName": ["Found and Felt", "FoundAndFelt"],
+      "url": "https://foundandfelt.com/",
+      "logo": "https://foundandfelt.com/assets/og.png",
+      "description": "Found & Felt finds the moments in your photos that mattered, writes each one as a scene, and asks the one question only you could answer."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://foundandfelt.com/#website",
+      "name": "Found & Felt",
+      "url": "https://foundandfelt.com/",
+      "publisher": { "@id": "https://foundandfelt.com/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Found & Felt",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Android",
+      "url": "https://foundandfelt.com/",
+      "description": "Scans your camera roll, picks the moments that mattered, writes each as a scene with a question only you can answer. A year of them becomes a printed book.",
+      "publisher": { "@id": "https://foundandfelt.com/#org" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
