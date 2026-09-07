@@ -196,6 +196,12 @@
     <p>The same crops and moment photos are the ones we store in your account, described in section 2. Nothing else from your library is uploaded.</p>
     <p>If you are not comfortable with photos of your family being processed by an AI provider, this app is not a good fit for you, and we&rsquo;d rather say so here than have you find out later.</p>
 
+    <h3>Does the scan send the camera roll to Claude?</h3>
+    <p>No. Finding faces and grouping them into people runs on the phone with on-device face models. What does go to Claude is a subset: face crops so it can double-check the groupings, the handful of candidate photos in the running for each moment so it can pick one, and the chosen photo so it can write. Everything goes through our own proxy function, which forwards the request and records only the model name and token counts. It never stores or logs the images.</p>
+
+    <h3>Is it used to train?</h3>
+    <p>No. The app uses Anthropic&rsquo;s commercial API, and Anthropic&rsquo;s commercial terms state that API inputs and outputs are not used to train their models unless the customer opts in, which we have not. That is a different policy from the consumer Claude app, where chat training is a setting for individuals.</p>
+
     <h2>4. What we never do</h2>
     <ul>
       <li><strong>We never sell your data.</strong></li>
