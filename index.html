@@ -1200,9 +1200,7 @@
         track("waitlist_submitted", { device: device });
         form.outerHTML =
           '<div class="join-done"><strong>You\'re on the list.</strong><p>' +
-          (device === "iPhone"
-            ? "We'll send your test link shortly — it opens in Apple's TestFlight app. Watch for a note from Found &amp; Felt."
-            : "We'll send your test link shortly — watch for a note from Found &amp; Felt.") +
+          "We'll send your test link shortly — watch for a note from Found &amp; Felt." +
           "</p></div>";
       })
       .catch(function () {
