@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Found &amp; Felt</title>
+<meta name="description" content="The baby book that starts with the photos you already took. Join the iPhone and Android beta." />
+<link rel="canonical" href="https://foundandfelt.com/" />
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta property="og:title" content="Found &amp; Felt" />
+<meta property="og:description" content="The baby book that starts with the photos you already took." />
+<meta property="og:image" content="https://foundandfelt.com/assets/og-v2.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FCF9F5;
+    --dark-paper: #F1EBE4;
+    --paper-bg: #E2DBD3;
+    --ink: #2F2E1E;
+    --ink-60: rgba(47, 46, 30, 0.72);
+    --ink-20: rgba(47, 46, 30, 0.2);
+    --green-text: #3D7263;
+    --light-green: #9DD392;
+    --error: #B91C1C;
+    --serif-display: "Playfair Display", Georgia, serif;
+    --sans: "Be Vietnam Pro", -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font: 300 17px/1.55 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  main {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 36px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .brand { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+  .brand img.crow { width: 72px; height: auto; }
+  .brand img.wordmark { width: 150px; height: auto; }
+  h1 {
+    font: italic 800 30px/1.14 var(--serif-display);
+    text-align: center;
+    text-wrap: balance;
+  }
+  .site-btn {
+    display: block;
+    text-align: center;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font: 500 17px var(--sans);
+    padding: 17px 24px;
+    border-radius: 999px;
+    transition: transform .15s ease;
+  }
+  .site-btn:hover { transform: translateY(-1px); }
+  .site-btn:focus-visible, .beta button:focus-visible, .beta input:focus-visible { outline: 3px solid var(--green-text); outline-offset: 3px; }
+  .beta {
+    background: var(--dark-paper);
+    border-radius: 18px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .beta h2 { font: 800 24px/1.2 var(--serif-display); }
+  .beta p { color: var(--ink-60); font-size: 15.5px; }
+  form { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  input[type=email] {
+    font: 400 16px var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--paper-bg);
+    border-radius: 12px;
+    padding: 14px 16px;
+    width: 100%;
+  }
+  .device { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border: 0; }
+  .device label { cursor: pointer; }
+  .device input { position: absolute; opacity: 0; }
+  .device span {
+    display: block;
+    text-align: center;
+    font: 500 15px var(--sans);
+    padding: 12px;
+    border: 1px solid var(--ink-20);
+    border-radius: 12px;
+    background: var(--paper);
+  }
+  .device input:checked + span { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .device input:focus-visible + span { outline: 3px solid var(--green-text); outline-offset: 2px; }
+  .beta button {
+    font: 500 16px var(--sans);
+    color: var(--ink);
+    background: var(--light-green);
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 24px;
+    cursor: pointer;
+  }
+  .beta button[disabled] { opacity: .55; cursor: default; }
+  .hp { display: none; }
+  .status { font-size: 14px; min-height: 1em; }
+  .status.err { color: var(--error); }
+  .done strong { display: block; font: 800 20px var(--serif-display); color: var(--green-text); margin-bottom: 4px; }
+  footer { text-align: center; font-size: 13px; color: var(--ink-60); }
+  footer a { color: inherit; }
+</style>
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_zzodP6Av2DxXiP9VvXUrMrUmKGNN84DREGH43AndtrK4', { api_host: 'https://us.i.posthog.com' });
+  posthog.register({ surface: 'link_page', link_source: 'b2' });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bd88caf10fe94364940f3a45f5d1d017"}'></script>
+</head>
+<body>
+<main>
+  <div class="brand">
+    <h1><img class="wordmark" src="/assets/wordmark.png" alt="Found &amp; Felt" /></h1>
+  </div>
+
+
+  <a class="site-btn" id="site-btn" href="/?utm_source=b2">Visit foundandfelt.com</a>
+
+  <section class="beta" aria-labelledby="beta-h">
+    <h2 id="beta-h">Join the beta</h2>
+    <p>We're testing with a small group of parents on iPhone and Android. Leave your email, pick your phone, and we'll send you the download link.</p>
+    <form id="beta-form" novalidate>
+      <label class="sr" for="bf-email">Email</label>
+      <input type="email" id="bf-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+      <div class="device" role="radiogroup" aria-label="Which phone do you use?">
+        <label><input type="radio" id="bf-iphone" name="device" value="iPhone" /><span>iPhone</span></label>
+        <label><input type="radio" id="bf-android" name="device" value="Android" /><span>Android</span></label>
+      </div>
+      <!-- checkbox, not text: autofill never ticks a checkbox, blind-filling bots do -->
+      <input type="checkbox" class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit">Send me the beta link</button>
+      <p class="status" id="bf-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer>
+    <a href="/privacy.html">Privacy</a> &nbsp;&middot;&nbsp; We never sell your data.
+  </footer>
+</main>
+
+<script>
+  var SRC = "b2";
+  var WEB3FORMS_KEY = "4faa77b4-f9f4-4024-be4d-060e3966fadb";
+  function track(name, props) {
+    if (window.posthog && typeof window.posthog.capture === "function") window.posthog.capture(name, props || {});
+  }
+  document.getElementById("site-btn").addEventListener("click", function () { track("link_page_site_clicked", { source: SRC }); });
+
+  var form = document.getElementById("beta-form");
+  var statusEl = document.getElementById("bf-status");
+  function fail(msg, reason) { statusEl.className = "status err"; statusEl.textContent = msg; track("waitlist_failed", { reason: reason, source: SRC }); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    statusEl.className = "status"; statusEl.textContent = "";
+    var data = new FormData(form);
+    if (data.get("botcheck")) return;
+    var email = (data.get("email") || "").trim();
+    var device = data.get("device");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("That email doesn't look right. Mind checking it?", "invalid_email");
+    if (!device) return fail("Pick iPhone or Android so we send the right link.", "no_device");
+    var btn = form.querySelector("button");
+    btn.disabled = true; btn.textContent = "Sending…";
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: "Found & Felt beta request (" + device + ", " + SRC + ")",
+        from_name: "Found & Felt link page",
+        email: email, replyto: email, device: device, source: SRC
+      })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res.success) throw new Error(res.message || "rejected");
+        track("waitlist_submitted", { device: device, source: SRC });
+        form.outerHTML = '<div class="done" role="status"><strong>You\'re on the list.</strong><p>Watch your inbox for the ' + device + ' link from Found &amp; Felt.</p></div>';
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = "Send me the beta link";
+        fail("That didn't send. Try again in a moment.", "network");
+      });
+  });
+</script>
+</body>
+</html>
