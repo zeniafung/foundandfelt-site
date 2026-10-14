@@ -112,7 +112,8 @@
   }
   .beta button[disabled] { opacity: .55; cursor: default; }
   .hp { display: none; }
-  .status { font-size: 14px; min-height: 1em; }
+  .status { font-size: 14px; }
+  .status:empty { display: none; }
   .status.err { color: var(--error); }
   .done strong { display: block; font: 800 20px var(--serif-display); color: var(--green-text); margin-bottom: 4px; }
   footer { text-align: center; font-size: 13px; color: var(--ink-60); }
